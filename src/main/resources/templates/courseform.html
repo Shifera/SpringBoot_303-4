@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Course Form</h1>
+
+<form action="#" th:action="@{/process}" th:object="${course}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <p>
+    <div class="container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h4>Title</h4>
+                    </div>
+                    <div class="col">
+                        <input type="text" th:field="*{title}" />
+                        <span th:if="${#fields.hasErrors('title')}"
+                              th:errors="*{title}"></span><br />
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+
+                                </div>
+                                <div class="col">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4>Instructor</h4>
+                                            </div>
+                                            <div class="col">
+
+        <input type="text" th:field="*{instructor}" />
+        <span th:if="${#fields.hasErrors('instructor')}"
+              th:errors="*{instructor}"></span><br />
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col">
+
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <h4>Description</h4>
+                                                                    </div>
+                                                                    <div class="col">
+
+        <textarea rows="3" th:field="*{description}" />
+        <span th:if="${#fields.hasErrors('description')}"
+              th:errors="*{description}"></span> <br />
+                                                                        <div class="container">
+                                                                            <div class="row">
+                                                                                <div class="col">
+
+                                                                                </div>
+                                                                                <div class="col">
+                                                                                    <div class="container">
+                                                                                        <div class="row">
+                                                                                            <div class="col">
+                                                                                                <h4>Credits</h4>
+                                                                                            </div>
+                                                                                            <div class="col">
+
+        <input type="number" th:field="*{credit}" />
+        <span th:if="${#fields.hasErrors('credit')}"
+              th:errors="*{credit}"></span><br />
+        <br />
+        <input class="btn btn-primary" type="submit" value="Submit">
+
+    </p>
+</form>
+</body>
+</html>
